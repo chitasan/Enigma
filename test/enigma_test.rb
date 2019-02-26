@@ -116,4 +116,12 @@ class EnigmaTest < Minitest::Test
     assert_equal 'i', enigma.shift_char('p', 20)
     assert_equal '!', enigma.shift_char('!', 3)
   end
+
+  def test_it_can_shift_four_characters
+    enigma = Enigma.new
+
+    expected = [' ', '!', 'd', 'j']
+    actual = enigma.shift_four_chars(['z', '!', 'a', 'f'], [1, 2, 3, 4])
+    assert_equal expected, actual
+  end 
 end 
