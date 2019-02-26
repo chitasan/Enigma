@@ -13,6 +13,10 @@ module Shifts
     end 
   end 
 
+  def shifts_values(key, date)
+    create_shifts(key, date).values
+  end 
+
   def shift_char(character, shift_value)
     if character_set.include?(character)
       index = character_set.find_index(character)
