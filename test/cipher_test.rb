@@ -14,7 +14,7 @@ class CipherTest < Minitest::Test
     assert_equal 'keder ohulw!', cipher
   end
 
-  def test_it_can_encrypt_message_from_self
+  def test_it_can_decrypt_message_from_self
     cipher = Cipher.decrypt("keder ohulw!", "02715", "040895")
 
     assert_equal 'hello world!', cipher
