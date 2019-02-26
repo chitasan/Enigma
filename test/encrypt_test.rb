@@ -25,4 +25,14 @@ class EncryptTest < Minitest::Test
 
     assert_equal "040895", encrypt.date
   end 
+
+  def test_it_can_encrypt_a_message_with_a_key_and_a_date
+    encrypt = Encrypt.new("hello world", "02715", "040895")
+
+    expected = {
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+   }
+    assert_equal expected, encrypt.execute 
 end 
