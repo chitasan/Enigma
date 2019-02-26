@@ -3,18 +3,18 @@ require './lib/shifts'
 class Cipher
   include Shifts 
 
-  attr_reader :message, :key, :date
+  attr_reader :message, :key, :date  
 
   def initialize(message, key, date)
     @message = message
-    @key = key
-    @date = date 
-  end
+    @date = date
+    @key = key 
+  end 
 
   def self.encrypt(message, key, date)
     self.new(message, key, date).encrypt
   end 
-
+  
   def self.decrypt(encrypted_message, key, date)
     self.new(encrypted_message, key, date).decrypt
   end 
@@ -32,8 +32,8 @@ class Cipher
       shift_four_chars(four_chars, negative_shifts)
     end.join
   end
-
-  def split_message_into_groups_of_four_chars(message)
+      
+  def split_message_into_groups_of_four_chars
     grouped_by_four = []
     @message.chars.each_slice(4) do |four_chars|
       grouped_by_four << four_chars
