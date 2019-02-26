@@ -100,4 +100,11 @@ class EnigmaTest < Minitest::Test
     }
     assert_equal expected, enigma.create_shifts("02715", "040895")
   end
+
+  def test_it_split_and_join_message_into_groups_of_four_chars
+    enigma = Enigma.new
+
+    expected = [["H", "e", "l", "l"], ["o", " ", "W", "o"], ["r", "l", "d", "!"]]
+    assert_equal expected, enigma.split_message_into_groups_of_four_chars("Hello World!")
+  end 
 end 
