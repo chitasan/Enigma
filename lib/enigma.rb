@@ -20,4 +20,12 @@ class Enigma
       letter.to_sym
     end 
   end 
+
+  def split_and_pair_key(key)
+    split_num = key.split(//)
+    split_num_to_i = split_num.map do |num|
+      num.to_i
+    end 
+    split_num_to_i.each_cons(2).to_a
+  end
 end 
