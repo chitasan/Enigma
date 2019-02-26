@@ -57,4 +57,12 @@ class Enigma
     end
     date_offsets_hash
   end  
+
+  def create_shifts(key, date)
+    date = date_offsets(date)
+    key = paired_number_offsets(key)
+    date.merge(key) do |letter, date, key|
+      date + key
+    end 
+  end
 end 
