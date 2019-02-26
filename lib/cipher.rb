@@ -6,7 +6,7 @@ class Cipher
   attr_reader :message, :key, :date  
 
   def initialize(message, key, date)
-    @message = message
+    @message = message.downcase
     @date = date
     @key = key 
   end 
