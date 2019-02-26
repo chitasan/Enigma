@@ -34,4 +34,13 @@ class Enigma
       pair.join
     end 
   end
+
+  def paired_number_offsets(key)
+    paired = join_adjacent_pair(key)
+    paired_num_offsets_hash = {}
+    offsets_hash_keys.each_with_index do |letter, index|
+      paired_num_offsets_hash[letter] = paired[index].to_i
+    end
+    paired_num_offsets_hash
+  end 
 end 
