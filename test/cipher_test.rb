@@ -8,33 +8,37 @@ class CipherTest < Minitest::Test
     assert_instance_of Cipher, cipher
   end 
 
-  def test_it_has_message
-    cipher = Cipher.new("hello world", "02715", "040895")
+  def test_it_can_encrypt_message_from_self
+    cipher = Cipher.encrypt("hello world!", "02715", "040895")
 
-    assert_equal "hello world", cipher.message
-  end 
-
-  def test_it_has_key
-    cipher = Cipher.new("hello world", "02715", "040895")
-
-    assert_equal "02715", cipher.key
+    assert_equal 'keder ohulw!', cipher
   end
 
-  def test_it_has_date
-    cipher = Cipher.new("hello world", "02715", "040895")
+  def test_it_can_decrypt_message_from_self
+    cipher = Cipher.decrypt("keder ohulw!", "02715", "040895")
 
-    assert_equal "040895", cipher.date
+    assert_equal 'hello world!', cipher
+  end
+
+  def test_it_can_encrypt_a_message
+    cipher = Cipher.new("hello world!", "02715", "040895")
+    assert_equal 'keder ohulw!', cipher.encrypt
   end 
 
-  def test_it_can_cipher_a_message_with_a_key_and_a_date
-    skip
-    cipher = Cipher.new("hello world", "02715", "040895")
+  def test_it_can_decrypt_a_message
+    cipher = Cipher.new("keder ohulw!", "02715", "040895")
+    assert_equal 'hello world!', cipher.decrypt
+  end
 
-    expected = {
-      cipherion: "keder ohulw",
-      key: "02715",
-      date: "040895"
-   }
-    assert_equal expected, cipher.execute 
+  def test_it_can_return_shifts_values
+   cipher = Cipher.new("hello world!", "02715", "040895")
+
+    assert_equal [3, 27, 73, 20], cipher.shifts
   end 
-end 
+
+  def test_it_can_return_negative_shifts
+    cipher = Cipher.new("hello world!", "02715", "040895")
+
+    assert_equal [-3, -27, -73, -20], cipher.negative_shifts
+  end 
+end
