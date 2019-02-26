@@ -28,5 +28,6 @@ class EnigmaTest < Minitest::Test
     }
     assert_equal expected, enigma.encrypt("Hello World!", "02715", "040895")
     assert_equal expected, enigma.encrypt("HellO WorlD!", "02715", "040895")
+    assert_equal expected, enigma.encrypt("HELLO WORLD!", "02715", "040895")
   end
 end 
