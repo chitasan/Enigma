@@ -18,6 +18,13 @@ class Cipher
     end.join
   end 
 
+  def decrypt
+    splitted_message = split_message_into_groups_of_four_chars
+    splitted_message.map do |four_chars|
+      shift_four_chars(four_chars, negative_shifts)
+    end.join
+  end
+
   def split_message_into_groups_of_four_chars(message)
     grouped_by_four = []
     @message.chars.each_slice(4) do |four_chars|

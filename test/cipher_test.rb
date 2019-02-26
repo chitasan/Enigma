@@ -32,13 +32,11 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_can_encrypt_a_message
-    skip
     cipher = Cipher.new("hello world!", "02715", "040895")
     assert_equal 'keder ohulw!', cipher.encrypt
   end 
 
   def test_it_can_decrypt_a_message
-    skip
     cipher = Cipher.new("keder ohulw!", "02715", "040895")
     assert_equal 'hello world!', cipher.decrypt
   end
