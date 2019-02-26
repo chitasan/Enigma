@@ -25,7 +25,6 @@ class CipherTest < Minitest::Test
   end 
 
   def test_it_can_encrypt_message_from_self
-    skip
     cipher = Cipher.encrypt("hello world!", "02715", "040895")
 
     assert_equal 'keder ohulw!', cipher

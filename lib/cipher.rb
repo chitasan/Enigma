@@ -11,6 +11,10 @@ class Cipher
     @date = date 
   end
 
+  def self.encrypt(message, key, date)
+    self.new(message, key, date).encrypt
+  end 
+
   def encrypt
     splitted_message = split_message_into_groups_of_four_chars
     splitted_message.map do |four_chars|
