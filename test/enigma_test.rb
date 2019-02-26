@@ -88,4 +88,16 @@ class EnigmaTest < Minitest::Test
     }
     assert_equal expected, enigma.date_offsets("040895")
   end 
+
+  def test_it_can_create_shifts
+    enigma = Enigma.new 
+
+    expected = { 
+      A: 3, 
+      B: 27,
+      C: 73,
+      D: 20
+    }
+    assert_equal expected, enigma.create_shifts("02715", "040895")
+  end
 end 
