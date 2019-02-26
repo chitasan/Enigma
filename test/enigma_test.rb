@@ -15,5 +15,11 @@ class EnigmaTest < Minitest::Test
     assert_equal 27, enigma.character_set.count
   end
 
+  def test_it_can_generate_key
+    enigma = Enigma.new
+
+    assert_equal 5, enigma.generate_key.length
+    assert_equal String, enigma.generate_key.class
+  end 
   
 end 
