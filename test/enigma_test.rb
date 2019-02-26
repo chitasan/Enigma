@@ -28,5 +28,11 @@ class EnigmaTest < Minitest::Test
     assert_equal 6, enigma.generate_date.length
     assert_equal String, enigma.generate_date.class
   end
-  
+
+   def test_it_return_hash_with_keys_symbol 
+    enigma = Enigma.new
+
+    expected = [:A, :B, :C, :D]
+    assert_equal expected, enigma.offsets_hash_keys
+  end
 end 
