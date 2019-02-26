@@ -101,6 +101,12 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.create_shifts("02715", "040895")
   end
 
+  def test_it_can_return_shifts_values
+    enigma = Enigma.new 
+
+    assert_equal [3, 27, 73, 20], enigma.shifts_values("02715", "040895")
+  end 
+
   def test_it_split_and_join_message_into_groups_of_four_chars
     enigma = Enigma.new
 
