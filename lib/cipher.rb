@@ -1,6 +1,6 @@
 require './lib/shifts'
 
-class Encrypt
+class Cipher
   include Shifts 
 
   attr_reader :message, :key, :date
