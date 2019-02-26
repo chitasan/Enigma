@@ -51,4 +51,11 @@ class EnigmaTest < Minitest::Test
     ]
     assert_equal expected, enigma.split_and_pair_key("02715")
   end
+
+  def test_it_can_join_adjacent_pair
+    enigma = Enigma.new
+  
+    expected = ["02", "27", "71", "15"]
+    assert_equal expected, enigma.join_adjacent_pair("02715")
+  end 
 end 
