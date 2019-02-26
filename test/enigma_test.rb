@@ -107,4 +107,13 @@ class EnigmaTest < Minitest::Test
     expected = [["H", "e", "l", "l"], ["o", " ", "W", "o"], ["r", "l", "d", "!"]]
     assert_equal expected, enigma.split_message_into_groups_of_four_chars("Hello World!")
   end 
+
+  def test_it_can_shift_characters
+    enigma = Enigma.new
+
+    assert_equal 'f', enigma.shift_char('c', 3)
+    assert_equal 'c', enigma.shift_char('y', 5)
+    assert_equal 'i', enigma.shift_char('p', 20)
+    assert_equal '!', enigma.shift_char('!', 3)
+  end
 end 
