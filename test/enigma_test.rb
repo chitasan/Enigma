@@ -21,5 +21,12 @@ class EnigmaTest < Minitest::Test
     assert_equal 5, enigma.generate_key.length
     assert_equal String, enigma.generate_key.class
   end 
+
+  def test_it_can_generate_date
+    enigma = Enigma.new
+
+    assert_equal 6, enigma.generate_date.length
+    assert_equal String, enigma.generate_date.class
+  end
   
 end 
