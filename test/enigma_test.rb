@@ -70,4 +70,10 @@ class EnigmaTest < Minitest::Test
     }
     assert_equal expected, enigma.paired_number_offsets("02715")
   end 
+
+  def test_it_return_last_four_digits_of_squared_date
+    enigma = Enigma.new
+
+    assert_equal [1,0, 2, 5], enigma.squared_date_last_four("040895")
+  end 
 end 
