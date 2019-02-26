@@ -58,4 +58,16 @@ class EnigmaTest < Minitest::Test
     expected = ["02", "27", "71", "15"]
     assert_equal expected, enigma.join_adjacent_pair("02715")
   end 
+
+  def test_it_can_create_paired_num_offsets
+    enigma = Enigma.new
+
+     expected = {
+      A: 02,
+      B: 27,
+      C: 71,
+      D: 15
+    }
+    assert_equal expected, enigma.paired_number_offsets("02715")
+  end 
 end 
