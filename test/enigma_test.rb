@@ -32,11 +32,23 @@ class EnigmaTest < Minitest::Test
   def shift_keys #to Generator 
     ("A".."D").to_a
   end
-  
+
   def test_it_return_hash_with_keys_symbol 
     enigma = Enigma.new
 
     expected = [:A, :B, :C, :D]
     assert_equal expected, enigma.offsets_hash_keys
+  end
+
+  def test_it_can_split_and_pair_key
+    enigma = Enigma.new 
+
+    expected = [
+      [0, 2],
+      [2, 7],
+      [7, 1],
+      [1, 5]
+    ]
+    assert_equal expected, enigma.split_and_pair_key("02715")
   end
 end 
