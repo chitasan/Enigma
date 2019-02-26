@@ -63,4 +63,26 @@ class EnigmaTest < Minitest::Test
     }
     assert_equal expected, enigma.decrypt("keder ohulw!$", "02715", "040895")
   end
+
+  def test_it_can_encrypt_an_empty_string
+    enigma = Enigma.new
+
+    expected = {
+      encryption: "c stc stc ",
+      key: "02715",
+      date: "040895"
+    }
+    assert_equal expected, enigma.encrypt("          ", "02715", "040895")
+  end 
+
+  def test_it_can_decrypt_an_empty_string
+    enigma = Enigma.new
+
+    expected = {
+      decryption: "x hgx hgx ",
+      key: "02715",
+      date: "040895"
+    }
+    assert_equal expected, enigma.decrypt("          ", "02715", "040895")
+  end 
 end 
