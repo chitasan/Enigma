@@ -29,7 +29,11 @@ class EnigmaTest < Minitest::Test
     assert_equal String, enigma.generate_date.class
   end
 
-   def test_it_return_hash_with_keys_symbol 
+  def shift_keys #to Generator 
+    ("A".."D").to_a
+  end
+  
+  def test_it_return_hash_with_keys_symbol 
     enigma = Enigma.new
 
     expected = [:A, :B, :C, :D]
