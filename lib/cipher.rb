@@ -13,9 +13,17 @@ class Cipher
 
   def split_message_into_groups_of_four_chars(message)
     grouped_by_four = []
-    message.chars.each_slice(4) do |four_chars|
+    @message.chars.each_slice(4) do |four_chars|
       grouped_by_four << four_chars
     end
     grouped_by_four
   end
+
+  def shifts
+    shifts_values(@key, @date)
+  end 
+
+  def negative_shifts
+    negative_shifts_values(@key, date)
+  end 
 end 

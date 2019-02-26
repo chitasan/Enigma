@@ -44,14 +44,12 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_can_return_shifts_values
-  skip
    cipher = Cipher.new("hello world!", "02715", "040895")
 
     assert_equal [3, 27, 73, 20], cipher.shifts
   end 
 
   def test_it_can_return_negative_shift
-    skip
     cipher = Cipher.new("hello world!", "02715", "040895")
 
     assert_equal [-3, -27, -73, -20], cipher.negative_shifts
