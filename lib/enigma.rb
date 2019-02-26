@@ -83,4 +83,10 @@ class Enigma
       character
     end 
   end
+
+  def shift_four_chars(characters, shift_values)
+    characters.map.with_index do |character, index|
+      shift_char(character, shift_values[index])
+    end 
+  end
 end 
