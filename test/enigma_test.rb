@@ -7,6 +7,19 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, enigma
   end 
 
+  def test_it_can_encrypt_a_message
+    enigma = Enigma.new
+
+    expected = {
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+    }
+    assert_equal expected, enigma.encrypt("hello world", "02715", "040895")
+  end 
+
+
+    #below are tests for Shifts and other mods 
   def test_it_has_a_character_set_of_27
     enigma = Enigma.new
    
@@ -27,10 +40,6 @@ class EnigmaTest < Minitest::Test
 
     assert_equal 6, enigma.generate_date.length
     assert_equal String, enigma.generate_date.class
-  end
-
-  def shift_keys #to Generator 
-    ("A".."D").to_a
   end
 
   def test_it_return_hash_with_keys_symbol 
