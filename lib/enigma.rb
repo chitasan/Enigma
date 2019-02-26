@@ -10,4 +10,10 @@ class Enigma
   def generate_date #to Generator
     Date.today.strftime('%m%d%y')
   end
+
+  def shift_keys #to Generator 
+    ("A".."D").to_a
+  end
+
+  
 end 
