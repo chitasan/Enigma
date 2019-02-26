@@ -15,5 +15,9 @@ class Enigma
     ("A".."D").to_a
   end
 
-  
+  def offsets_hash_keys #to Generator 
+    shift_keys.map do |letter|
+      letter.to_sym
+    end 
+  end 
 end 
