@@ -43,4 +43,9 @@ class Enigma
     end
     paired_num_offsets_hash
   end 
+
+  def squared_date_last_four(date)
+    date_squared = date.to_i ** 2
+    date_squared.digits.reverse.last(4)
+  end
 end 
