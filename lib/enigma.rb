@@ -72,5 +72,15 @@ class Enigma
       grouped_by_four << four_chars
     end
     grouped_by_four
-  end 
+  end
+  
+  def shift_char(character, shift_value)
+    if character_set.include?(character)
+      index = character_set.find_index(character)
+      shifted_char = character_set.rotate(shift_value)
+      shifted_char[index]
+    else
+      character
+    end 
+  end
 end 
