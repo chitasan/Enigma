@@ -28,4 +28,10 @@ class Enigma
     end 
     split_num_to_i.each_cons(2).to_a
   end
+
+  def join_adjacent_pair(key)
+    split_and_pair_key(key).map do |pair|
+      pair.join
+    end 
+  end
 end 
