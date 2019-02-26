@@ -1,21 +1,9 @@
+require './lib/generator'
+
 class Enigma
-  def character_set #to Generator
-    character_set = ("a".."z").to_a << " " 
-  end
+  include Generator 
   
-  def generate_key #to Generator
-    (0..9).to_a.sample(5).join("")
-  end 
-  
-  def generate_date #to Generator
-    Date.today.strftime('%m%d%y')
-  end
-
-  def shift_keys #to Generator 
-    ("A".."D").to_a
-  end
-
-  def offsets_hash_keys #to Generator 
+  def offsets_hash_keys  
     shift_keys.map do |letter|
       letter.to_sym
     end 
