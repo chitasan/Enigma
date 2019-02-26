@@ -76,4 +76,16 @@ class EnigmaTest < Minitest::Test
 
     assert_equal [1,0, 2, 5], enigma.squared_date_last_four("040895")
   end 
+
+  def test_it_can_create_date_offsets
+    enigma = Enigma.new 
+
+    expected = {
+      A: 1,
+      B: 0,
+      C: 2,
+      D: 5
+    }
+    assert_equal expected, enigma.date_offsets("040895")
+  end 
 end 
