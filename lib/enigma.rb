@@ -4,7 +4,7 @@ require './lib/generator'
 class Enigma
   include Generator
 
-  def encrypt(message, key, date)
+  def encrypt(message, key = generate_key, date = generate_date)
     cipher = Cipher.encrypt(message, key, date)
     {
       encryption: cipher, 
@@ -13,7 +13,7 @@ class Enigma
     }
   end
 
-  def decrypt(message, key, date)
+  def decrypt(message, key = generate_key, date = generate_date)
     cipher = Cipher.decrypt(message, key, date)
     {
       decryption: cipher, 
