@@ -1,5 +1,4 @@
 require './test/test_helper'
-require 'pry'
 
 class EnigmaTest < Minitest::Test
   def test_it_exists
@@ -112,7 +111,7 @@ class EnigmaTest < Minitest::Test
     assert_equal String, enigma.encrypt("hello world!", key, date)[:encryption].class
     assert_equal "hello world!".length, enigma.encrypt("hello world!", "02715", date)[:encryption].length
   end 
-
+  
   def test_it_can_decrypt_a_message_with_no_key_no_date
     enigma = Enigma.new
     date = enigma.generate_date
