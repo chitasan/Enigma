@@ -150,6 +150,8 @@ class CipherTest < Minitest::Test
     assert_equal "c", cipher.shift_char("y", 5)
     assert_equal "i", cipher.shift_char("p", 20)
     assert_equal "!", cipher.shift_char("!", 3)
+    assert_equal "1", cipher.shift_char("1", 3)
+    assert_equal "e", cipher.shift_char(" ", 5)
   end
 
   def test_it_can_shift_four_characters
