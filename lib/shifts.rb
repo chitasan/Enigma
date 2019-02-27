@@ -18,9 +18,7 @@ module Shifts
   end 
 
   def negative_shifts_values(key, date)
-    shifts_values(key, date).map do |number|
-      -number
-    end 
+    shifts_values(key, date).map { |number| -number }
   end 
 
   def shift_char(character, shift_value)
