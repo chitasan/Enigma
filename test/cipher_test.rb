@@ -30,10 +30,16 @@ class CipherTest < Minitest::Test
     assert_equal 'hello world!', cipher.decrypt
   end
 
-  def test_it_can_return_shifts_values
+  def test_it_can_return_shifts
    cipher = Cipher.new("hello world!", "02715", "040895")
 
     assert_equal [3, 27, 73, 20], cipher.shifts
+  end 
+
+  def test_it_can_return_shifts_values
+    cipher = Cipher.new("hello world!", "02715", "040895")
+
+    assert_equal [3, 27, 73, 20], cipher.shifts_values("02715", "040895")
   end 
 
   def test_it_can_return_negative_shifts
@@ -132,14 +138,8 @@ class CipherTest < Minitest::Test
     assert_equal expected, cipher.create_shifts("02715", "040895")
   end
 
-  def test_it_can_return_shifts_values
-    cipher = Cipher.new("hello world!", "02715", "040895")
-
-    assert_equal [3, 27, 73, 20], cipher.shifts_values("02715", "040895")
-  end 
-
   def test_it_can_return_negative_shifts_values
-   cipher = Cipher.new("hello world!", "02715", "040895")
+    cipher = Cipher.new("hello world!", "02715", "040895")
 
     assert_equal [-3, -27, -73, -20], cipher.negative_shifts_values("02715", "040895")
   end 

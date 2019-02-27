@@ -52,7 +52,7 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.encrypt("Hello World!$", "02715", "040895")
   end
 
-   def test_it_can_decrypt_a_message_with_special_characters
+  def test_it_can_decrypt_a_message_with_special_characters
     enigma = Enigma.new
 
     expected = {

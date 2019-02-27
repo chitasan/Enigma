@@ -8,8 +8,8 @@ module Shifts
   def create_shifts(key, date)
     date = date_offsets(date)
     key = paired_number_offsets(key)
-    date.merge(key) do |letter, date, key|
-      date + key
+    date.merge(key) do |letter, date_offset, key_offset|
+      date_offset + key_offset
     end 
   end 
 
