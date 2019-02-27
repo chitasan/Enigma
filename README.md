@@ -34,6 +34,10 @@ Open `decrypted.txt` after the command is successfully executed to see the decry
 
 ## Self-Assessment
 Functionality: 3
+
 OOP: 4
+
 TDD: 3
+
 Version Control: 3
+
