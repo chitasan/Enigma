@@ -14,7 +14,7 @@ enigma = Enigma.new
 decryption = enigma.decrypt(message, key, date)
 
 write_file = File.open(write_file, "w")
-write_file.write(decryption[:decryption])
+write_file.write(decryption)
 read_file.close
 write_file.close
 
