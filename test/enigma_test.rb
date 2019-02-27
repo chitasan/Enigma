@@ -88,19 +88,37 @@ class EnigmaTest < Minitest::Test
 
   def test_it_can_encrypt_a_message_with_key_and_no_date
     enigma = Enigma.new
-    date = Date.today.strftime('%d%m%y')
+    date = enigma.generate_date
 
-    assert_equal "02715", enigma.encrypt("hello world!", "02715", date = nil)[:key]
-    assert_equal String, enigma.encrypt("hello world!", "02715", date = nil)[:encryption].class
-    assert_equal "hello world!".length, enigma.encrypt("hello world!", "02715", date = nil)[:encryption].length
+    assert_equal "02715", enigma.encrypt("hello world!", "02715", date)[:key]
+    assert_equal String, enigma.encrypt("hello world!", "02715", date)[:encryption].class
+    assert_equal "hello world!".length, enigma.encrypt("hello world!", "02715", date)[:encryption].length
   end 
 
   def test_it_can_decrypt_a_message_with_key_and_no_date
     enigma = Enigma.new
-    date = Date.today.strftime('%d%m%y')
+    date = enigma.generate_date
     
-    assert_equal "02715", enigma.decrypt("hello world!", "02715", date = nil)[:key]
-    assert_equal String, enigma.decrypt("hello world!", "02715", date = nil)[:decryption].class
-    assert_equal "hello world!".length, enigma.decrypt("hello world!", "02715", date = nil)[:decryption].length
+    assert_equal "02715", enigma.decrypt("hello world!", "02715", date)[:key]
+    assert_equal String, enigma.decrypt("hello world!", "02715", date)[:decryption].class
+    assert_equal "hello world!".length, enigma.decrypt("hello world!", "02715", date)[:decryption].length
+  end 
+
+  def test_it_can_encrypt_a_message_with_no_key_no_date
+    enigma = Enigma.new
+    date = enigma.generate_date
+    key = enigma.generate_key
+    
+    assert_equal String, enigma.encrypt("hello world!", key, date)[:encryption].class
+    assert_equal "hello world!".length, enigma.encrypt("hello world!", "02715", date)[:encryption].length
+  end 
+
+  def test_it_can_decrypt_a_message_with_no_key_no_date
+    enigma = Enigma.new
+    date = enigma.generate_date
+    key = enigma.generate_key
+    
+    assert_equal String, enigma.decrypt("hello world!", key, date)[:decryption].class
+    assert_equal "hello world!".length, enigma.decrypt("hello world!", "02715", date)[:decryption].length
   end 
 end 
