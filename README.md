@@ -22,13 +22,13 @@ The project also uses Command Line Interface to decrypt and encrypt any message.
 
 Write your message in `message.txt`. 
 
-Run the command line `ruby encrypt.rb message.txt encrypted.txt` to encrypt the message.
+Run the command line `ruby lib/encrypt.rb message.txt encrypted.txt` to encrypt the message.
 
 Open `encrypted.txt` after the command is successfully executed to see the encryption.
 
 ### To decrypt:
 
-`ruby decrypt.rb decrypted.txt message.txt` to decrypt the message.
+`ruby lib/decrypt.rb decrypted.txt message.txt` to decrypt the message.
 
 Open `message.txt` after the command is successfully executed to see the decryption.
 
