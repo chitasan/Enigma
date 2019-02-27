@@ -12,7 +12,7 @@ date = "240818"
 encryption = enigma.encrypt(message, key, date)
 
 write_file = File.open(write_file, "w")
-write_file.write(encryption)
+write_file.write(encryption[:encryption])
 
 read_file.close
 write_file.close
