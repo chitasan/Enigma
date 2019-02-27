@@ -89,9 +89,18 @@ class EnigmaTest < Minitest::Test
   def test_it_can_encrypt_a_message_with_key_and_no_date
     enigma = Enigma.new
     date = Date.today.strftime('%d%m%y')
-    
+
     assert_equal "02715", enigma.encrypt("hello world!", "02715", date = nil)[:key]
     assert_equal String, enigma.encrypt("hello world!", "02715", date = nil)[:encryption].class
     assert_equal "hello world!".length, enigma.encrypt("hello world!", "02715", date = nil)[:encryption].length
+  end 
+
+  def test_it_can_decrypt_a_message_with_key_and_no_date
+    enigma = Enigma.new
+    date = Date.today.strftime('%d%m%y')
+    
+    assert_equal "02715", enigma.decrypt("hello world!", "02715", date = nil)[:key]
+    assert_equal String, enigma.decrypt("hello world!", "02715", date = nil)[:decryption].class
+    assert_equal "hello world!".length, enigma.decrypt("hello world!", "02715", date = nil)[:decryption].length
   end 
 end 
