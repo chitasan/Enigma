@@ -32,12 +32,4 @@ Open `encrypted.txt` after the command is successfully executed to see the encry
 
 Open `decrypted.txt` after the command is successfully executed to see the decryption.
 
-## Self-Assessment
-Functionality: 3
-
-OOP: 4
-
-TDD: 3
-
-Version Control: 3
 
