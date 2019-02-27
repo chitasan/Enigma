@@ -46,6 +46,6 @@ class Cipher
   end 
 
   def negative_shifts
-    negative_shifts_values(@key, date)
+    negative_shifts_values(@key, @date)
   end 
 end 
