@@ -1,6 +1,9 @@
 require './lib/cipher'
+require './lib/generator'
 
 class Enigma
+  include Generator
+
   def encrypt(message, key, date)
     cipher = Cipher.encrypt(message, key, date)
     {
