@@ -42,7 +42,7 @@ class CipherTest < Minitest::Test
     assert_equal [-3, -27, -73, -20], cipher.negative_shifts
   end
 
-    def test_it_has_a_character_set_of_27
+  def test_it_has_a_character_set_of_27
     cipher = Cipher.new("hello world!", "02715", "040895")
    
     expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
