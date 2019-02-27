@@ -28,7 +28,7 @@ Open `encrypted.txt` after the command is successfully executed to see the encry
 
 ### To decrypt:
 
-`ruby lib/decrypt.rb decrypted.txt message.txt` to decrypt the message.
+`ruby lib/decrypt.rb encrypted.txt decrypted.txt 82648 240818` to decrypt the message. 82648 is the key given in the `encrypt.rb` file and 240818 is the date given. 
 
-Open `message.txt` after the command is successfully executed to see the decryption.
+Open `decrypted.txt` after the command is successfully executed to see the decryption.
 
