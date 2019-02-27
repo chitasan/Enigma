@@ -113,7 +113,12 @@ class EnigmaTest < Minitest::Test
     
     assert_equal "02715", @enigma.decrypt("keder ohulw!", "02715", date)[:key]
     assert_equal String, @enigma.decrypt("keder ohulw!", "02715", date)[:decryption].class
-    assert_equal "hello world!".length, @enigma.decrypt("keder ohulw!", "02715", date)[:decryption].length
+
+    actual = @enigma.decrypt("keder ohulw!", "02715", date)[:decryption].length
+    assert_equal "keder ohulw!".length, actual 
+
+    assert_equal 6, @enigma.decrypt("keder ohulw!", "02715", date)[:date].length
+    assert_equal String, @enigma.decrypt("keder ohulw!", "02715", date)[:date].class
   end 
 
   def test_it_can_encrypt_a_message_with_no_key_no_date
