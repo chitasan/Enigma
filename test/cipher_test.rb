@@ -1,5 +1,4 @@
 require './test/test_helper'
-require 'pry'
 
 class CipherTest < Minitest::Test
   def test_it_exists 
@@ -11,23 +10,23 @@ class CipherTest < Minitest::Test
   def test_it_can_encrypt_message_from_self
     cipher = Cipher.encrypt("hello world!", "02715", "040895")
 
-    assert_equal 'keder ohulw!', cipher
+    assert_equal "keder ohulw!", cipher
   end
 
   def test_it_can_decrypt_message_from_self
     cipher = Cipher.decrypt("keder ohulw!", "02715", "040895")
 
-    assert_equal 'hello world!', cipher
+    assert_equal "hello world!", cipher
   end
 
   def test_it_can_encrypt_a_message
     cipher = Cipher.new("hello world!", "02715", "040895")
-    assert_equal 'keder ohulw!', cipher.encrypt
+    assert_equal "keder ohulw!", cipher.encrypt
   end 
 
   def test_it_can_decrypt_a_message
     cipher = Cipher.new("keder ohulw!", "02715", "040895")
-    assert_equal 'hello world!', cipher.decrypt
+    assert_equal "hello world!", cipher.decrypt
   end
 
   def test_it_can_return_shifts
@@ -147,10 +146,10 @@ class CipherTest < Minitest::Test
   def test_it_can_shift_characters
     cipher = Cipher.new("hello world!", "02715", "040895")
 
-    assert_equal 'f', cipher.shift_char('c', 3)
-    assert_equal 'c', cipher.shift_char('y', 5)
-    assert_equal 'i', cipher.shift_char('p', 20)
-    assert_equal '!', cipher.shift_char('!', 3)
+    assert_equal "f", cipher.shift_char("c", 3)
+    assert_equal "c", cipher.shift_char("y", 5)
+    assert_equal "i", cipher.shift_char("p", 20)
+    assert_equal "!", cipher.shift_char("!", 3)
   end
 
   def test_it_can_shift_four_characters
