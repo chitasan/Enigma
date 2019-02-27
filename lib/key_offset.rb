@@ -4,23 +4,17 @@ module KeyOffset
   include Generator 
 
   def offsets_hash_keys  
-    shift_keys.map do |letter|
-      letter.to_sym
-    end 
+    shift_keys.map { |letter| letter.to_sym } 
   end 
 
   def split_and_pair_key(key)
     split_num = key.split(//)
-    split_num_to_i = split_num.map do |num|
-      num.to_i
-    end 
+    split_num_to_i = split_num.map { |num| num.to_i }
     split_num_to_i.each_cons(2).to_a
   end
 
   def join_adjacent_pair(key)
-    split_and_pair_key(key).map do |pair|
-      pair.join
-    end 
+    split_and_pair_key(key).map { |pair| pair.join }
   end
 
   def paired_number_offsets(key)
