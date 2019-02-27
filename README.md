@@ -1,1 +1,24 @@
 # Enigma
+
+Enigma is an encryption algorithm program based on the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher</a>. 
+
+This was created while a student at Turing School of Software and Design as a Final Individual Project. 
+
+## Objective
+The project uses TDD, OOP, SRP classes to encrypt and decrypt a message by four different shifts. Every fourth character will be shifted by the same shift value. Shift values are created by a key and a date, which is either given or as a generated random key or current date, if not given. The algorithm uses the lowercase alphabet with a space,(" "), as the 27th character.
+
+## Installation
+`$ git clone git@github.com:chitasan/Enigma.git`
+
+## Testing
+The project uses <a href="https://github.com/colszowka/simplecov"> SimpleCov</a> to test. 
+
+`rake` runs the tests. 
+
+## Go For It: Encrypt Or Decrypt Your Own Message 
+The project also uses Command Line Interface to decrypt and encrypt any message.
+
+`ruby encrpyt.rb message.txt encrypted.txt` to encrypt a message. Open encrypted.txt after the command is successfully executed to see the encrptyion.
+
+`ruby decrypt.rb decrypted.txt message.txt` to decrypt a message. Open message.txt after the command is successfully executed to see the decryption. 
+
