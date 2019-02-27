@@ -18,7 +18,11 @@ The project uses <a href="https://github.com/colszowka/simplecov"> SimpleCov</a>
 ## Go For It: Encrypt Or Decrypt Your Own Message 
 The project also uses Command Line Interface to decrypt and encrypt any message.
 
-`ruby encrpyt.rb message.txt encrypted.txt` to encrypt a message. Open encrypted.txt after the command is successfully executed to see the encrptyion.
+`ruby encrypt.rb message.txt encrypted.txt` to encrypt a message.
+Write your message in `message.txt`. 
+Run the command line above to encrypt the message.
+Open `encrypted.txt` after the command is successfully executed to see the encryption.
 
-`ruby decrypt.rb decrypted.txt message.txt` to decrypt a message. Open message.txt after the command is successfully executed to see the decryption. 
+`ruby decrypt.rb decrypted.txt message.txt` to decrypt a message.
+Open `message.txt` after the command is successfully executed to see the decryption.
 
