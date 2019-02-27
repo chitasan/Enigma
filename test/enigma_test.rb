@@ -85,6 +85,28 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.decrypt("          ", "02715", "040895")
   end 
 
+  def test_it_can_encrypt_a_string_of_numbers
+    enigma = Enigma.new
+
+    expected = {
+      encryption: "12345",
+      key: "02715",
+      date: "040895"
+    }
+    assert_equal expected, enigma.encrypt("12345", "02715", "040895")
+  end 
+
+  def test_it_can_decrypt_a_string_of_numbers
+    enigma = Enigma.new
+
+    expected = {
+      decryption: "12345",
+      key: "02715",
+      date: "040895"
+    }
+    assert_equal expected, enigma.decrypt("12345", "02715", "040895")
+  end 
+
   def test_it_can_encrypt_a_message_with_key_and_no_date
     enigma = Enigma.new
     date = enigma.generate_date
