@@ -1,6 +1,6 @@
 module Generator 
   def character_set #to Generator
-    character_set = ("a".."z").to_a << " " 
+    ("a".."z").to_a << " " 
   end
   
   def generate_key #to Generator

@@ -13,7 +13,7 @@ class Enigma
     }
   end
 
-   def decrypt(message, key, date)
+  def decrypt(message, key, date)
     cipher = Cipher.decrypt(message, key, date)
     {
       decryption: cipher, 
